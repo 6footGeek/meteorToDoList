@@ -44,7 +44,7 @@ if (Meteor.isClient) {
                 text: text, //text variable above
                 createdAt: new Date(), // current time
                 owner: Meteor.userId(), 
-                username: Meteor.user().username
+                username: Meteor.user().username || Meteor.user().services.twitter.screenName // add or for twitter if logged in with twitter
             });
 
             //clear form
